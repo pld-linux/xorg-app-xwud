@@ -1,4 +1,4 @@
-# $Rev: 3430 $, $Date: 2005-08-15 12:17:57 $
+# $Rev: 3430 $, $Date: 2005-08-27 17:42:48 $
 #
 Summary:	xwud application
 Summary(pl):	Aplikacja xwud
@@ -15,7 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-util-util-macros
-BuildRequires:	pkg-config
+BuildRequires:	pkgconfig >= 0.19
 BuildRoot:	%{tmpdir}/xwud-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
