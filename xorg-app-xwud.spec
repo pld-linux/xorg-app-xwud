@@ -1,19 +1,18 @@
 Summary:	xwud application
 Summary(pl):	Aplikacja xwud
 Name:		xorg-app-xwud
-Version:	0.99.0
-Release:	0.02
+Version:	0.99.1
+Release:	0.1
 License:	MIT
 Group:		X11/Applications
-Source0:	http://xorg.freedesktop.org/X11R7.0-RC0/app/xwud-%{version}.tar.bz2
-# Source0-md5:	066248c34acf66251a4c75868280ef6c
-Patch0:		xwud-man.patch
+Source0:	http://xorg.freedesktop.org/releases/X11R7.0-RC1/app/xwud-%{version}.tar.bz2
+# Source0-md5:	757dd2f74e73579b2a98c8f52012a13c
 URL:		http://xorg.freedesktop.org/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 0.19
 BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	xorg-util-util-macros
+BuildRequires:	xorg-util-util-macros >= 0.99.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,7 +23,6 @@ Aplikacja xwud.
 
 %prep
 %setup -q -n xwud-%{version}
-%patch0 -p1
 
 %build
 %{__aclocal}
@@ -39,12 +37,14 @@ Aplikacja xwud.
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+	DESTDIR=$RPM_BUILD_ROOT \
+	appmandir=%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc ChangeLog
 %attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*.1*
+%{_mandir}/man1/*.1x*
