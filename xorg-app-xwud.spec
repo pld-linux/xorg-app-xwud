@@ -1,5 +1,5 @@
 Summary:	xwud application
-Summary(pl.UTF-8):   Aplikacja xwud
+Summary(pl.UTF-8):	Aplikacja xwud
 Name:		xorg-app-xwud
 Version:	1.0.1
 Release:	1
