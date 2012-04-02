@@ -1,17 +1,18 @@
 Summary:	xwud application - dump image displayer for X
 Summary(pl.UTF-8):	Aplikacja xwud do wyświetlania obrazów zrzutów pod X
 Name:		xorg-app-xwud
-Version:	1.0.3
+Version:	1.0.4
 Release:	1
 License:	MIT
 Group:		X11/Applications
 Source0:	http://xorg.freedesktop.org/releases/individual/app/xwud-%{version}.tar.bz2
-# Source0-md5:	a37020053e8ee32c6fd1145242d53ee3
+# Source0-md5:	3025b152b4f13fdffd0c46d0be587be6
 URL:		http://xorg.freedesktop.org/
 BuildRequires:	autoconf >= 2.60
 BuildRequires:	automake
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	xorg-lib-libX11-devel
+BuildRequires:	xorg-proto-xproto-devel >= 7.0.17
 BuildRequires:	xorg-util-util-macros >= 1.8
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
